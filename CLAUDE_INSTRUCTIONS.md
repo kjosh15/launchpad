@@ -41,7 +41,7 @@ git commit -m "Initial commit from launchpad template"
 cd /path/to/existing/project
 
 # Run bootstrap script
-curl -fsSL https://raw.githubusercontent.com/jxnl/launchpad/main/bootstrap.sh | bash
+curl -fsSL https://raw.githubusercontent.com/kjosh15/launchpad/main/bootstrap.sh | bash
 ```
 
 ### Option 3: Manual Copy
