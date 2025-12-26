@@ -21,6 +21,20 @@ launchpad/
 
 ## Quick Start
 
+### Option 0: Global Config (Recommended)
+
+Add to `~/.claude/AGENTS.md` (or `~/.codex/AGENTS.md`) so the agent auto-suggests Launchpad for any unconfigured project:
+
+```markdown
+## Auto-Setup Check
+
+**When starting in a directory without AGENTS.md or CLAUDE.md:**
+→ Suggest: "This project isn't configured yet. Want me to set it up with Launchpad?"
+
+If yes, run:
+curl -fsSL https://raw.githubusercontent.com/kjosh15/launchpad/main/bootstrap.sh | bash
+```
+
 ### Option 1: Bootstrap Script (Existing Projects)
 
 ```bash
