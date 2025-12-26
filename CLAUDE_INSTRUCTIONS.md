@@ -2,9 +2,24 @@
 
 **For Claude Code, Codex, Gemini, or any AI coding assistant.**
 
-Copy this to your assistant, or add to your global config:
+## Quick Setup (Global Config)
+
+Add this to your global config so the agent auto-suggests Launchpad for unconfigured projects:
+
 - Claude Code: `~/.claude/AGENTS.md`
 - Codex: `~/.codex/AGENTS.md`
+
+```markdown
+## Auto-Setup Check
+
+**When starting in a directory without AGENTS.md or CLAUDE.md:**
+→ Suggest: "This project isn't configured yet. Want me to set it up with Launchpad?"
+
+If yes, run:
+\`\`\`bash
+curl -fsSL https://raw.githubusercontent.com/kjosh15/launchpad/main/bootstrap.sh | bash
+\`\`\`
+```
 
 ---
 
