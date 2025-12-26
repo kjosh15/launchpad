@@ -6,7 +6,7 @@
 
 set -e
 
-LAUNCHPAD_URL="https://raw.githubusercontent.com/YOUR_USER/launchpad/main"
+LAUNCHPAD_URL="https://raw.githubusercontent.com/kjosh15/launchpad/main"
 
 # Colors
 GREEN='\033[0;32m'
