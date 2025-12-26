@@ -24,7 +24,7 @@ launchpad/
 ### Option 1: Bootstrap Script (Existing Projects)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/YOUR_USER/launchpad/main/bootstrap.sh | bash
+curl -fsSL https://raw.githubusercontent.com/kjosh15/launchpad/main/bootstrap.sh | bash
 ```
 
 Or download and run:
