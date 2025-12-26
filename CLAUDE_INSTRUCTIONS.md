@@ -25,7 +25,7 @@ Launchpad is a lean, TDD-focused configuration template for AI coding agents. It
 
 ```bash
 # Clone launchpad
-git clone https://github.com/jxnl/launchpad my-project-name
+git clone https://github.com/kjosh15/launchpad my-project-name
 cd my-project-name
 
 # Reset git history for fresh start
@@ -86,4 +86,4 @@ PLAN → RED → GREEN → REFACTOR → VERIFY
 
 ---
 
-**Repository:** https://github.com/jxnl/launchpad
+**Repository:** https://github.com/kjosh15/launchpad
