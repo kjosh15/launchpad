@@ -2,23 +2,32 @@
 
 **For Claude Code, Codex, Gemini, or any AI coding assistant.**
 
-## Quick Setup (Global Config)
+## Quick Setup (Auto-Prompt Hook)
 
-Add this to your global config so the agent auto-suggests Launchpad for unconfigured projects:
+Add a SessionStart hook so Claude automatically prompts in unconfigured directories.
 
-- Claude Code: `~/.claude/AGENTS.md`
-- Codex: `~/.codex/AGENTS.md`
+**1. Create** `~/.claude/hooks/check-launchpad.sh`:
 
-```markdown
-## Auto-Setup Check
+```bash
+#!/bin/bash
+if [[ "$PWD" == "$HOME" ]] || [[ "$PWD" == "/" ]] || [[ "$PWD" == /tmp* ]]; then exit 0; fi
+if [[ ! -f "AGENTS.md" ]] && [[ ! -f "CLAUDE.md" ]] && [[ ! -f ".claude/CLAUDE.md" ]]; then
+    echo "📋 This project isn't configured. Set up with Launchpad?"
+    echo "  curl -fsSL https://raw.githubusercontent.com/kjosh15/launchpad/main/bootstrap.sh | bash"
+fi
+exit 0
+```
 
-**When starting in a directory without AGENTS.md or CLAUDE.md:**
-→ Suggest: "This project isn't configured yet. Want me to set it up with Launchpad?"
+**2. Make executable:** `chmod +x ~/.claude/hooks/check-launchpad.sh`
 
-If yes, run:
-\`\`\`bash
-curl -fsSL https://raw.githubusercontent.com/kjosh15/launchpad/main/bootstrap.sh | bash
-\`\`\`
+**3. Add to** `~/.claude/settings.json`:
+
+```json
+{
+  "hooks": {
+    "SessionStart": [{"hooks": [{"type": "command", "command": "~/.claude/hooks/check-launchpad.sh"}]}]
+  }
+}
 ```
 
 ---
